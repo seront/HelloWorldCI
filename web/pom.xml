@@ -23,20 +23,20 @@
 	</dependencies>
 	
 	<scm>
-        <connection>scm:git:https://rcrespop@bitbucket.org/rcrespop/web.git</connection>
-        <developerConnection>scm:git:https://${username}:${password}@bitbucket.org/rcrespop/web.git</developerConnection>
-        <url>scm:git:https://rcrespop@bitbucket.org/rcrespop/web.git</url>
+        <connection>scm:git:https://github.com/ContardoRM/HelloWorldCI.git</connection>
+        <developerConnection>scm:git:https://${username}:${password}@github.com/ContardoRM/HelloWorldCI.git</developerConnection>
+        <url>scm:git:https://github.com/ContardoRM/HelloWorldCI.git</url>
       <tag>HEAD</tag>
   </scm>
 	
 	 <distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<url>http://localhost:8081/nexus/content/repositories/releases</url>
+			<url>http://10.30.20.164:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
-			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://10.30.20.164:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 	
