@@ -32,11 +32,11 @@
 	 <distributionManagement>
 		<repository>
 			<id>nexus</id>
-			<url>http://10.30.20.2188081/nexus/content/repositories/releases</url>
+			<url>http://10.30.20.234:8081/nexus/content/repositories/releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>nexus</id>
-			<url>http://10.30.20.218:8081/nexus/content/repositories/snapshots/</url>
+			<url>http://10.30.20.234:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 	
