@@ -29,16 +29,6 @@
       <tag>HEAD</tag>
   </scm>
 	
-	 <distributionManagement>
-		<repository>
-			<id>nexus</id>
-			<url>http://172.31.8.169:8081/nexus/content/repositories/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus</id>
-			<url>http://172.31.8.169:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 	
 	<build>
 		<finalName>web</finalName>
