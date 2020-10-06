@@ -1,17 +1,28 @@
-node("aws") {
-    docker.withRegistry('contardo.acuna@gmail.com', 'docker-hub-credentials') {
-    
-        git url: "https://github.com/ContardoRM/HelloWorldCI", credentialsId: 'git-hub-credentials'
-    
-        sh "git rev-parse HEAD > .git/commit-id"
-        def commit_id = readFile('.git/commit-id').trim()
-        println commit_id
-    
-        stage "build"
-        def app = docker.build "Test Jenkins"
-    
-        stage "publish"
-        app.push 'master'
-        app.push "${commit_id}"
+node('aws') {
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+        checkout scm
+    }
+    stage('Build Docker image') {
+        /*builds the image; synonymous to Docker build on the command line */
+        app = docker.build("nimrods8/helloisrael")
+    }
+    stage('Test Docker image') {
+        app.inside {
+            sh 'echo "Tests passed"'
+        }
+    }
+    stage('Push Docker image') {
+        /* Finally, we'll push the image with two tags:
+         * First, the incremental build number from Jenkins
+         * Second, the 'latest' tag.
+         * Pushing multiple tags is cheap, as all the layers are reused. */
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+        }
+    }
+    stage('Send slack notification') {
+         slackSend color: 'good', message: 'Message from Jenkins Pipeline'
     }
 }
