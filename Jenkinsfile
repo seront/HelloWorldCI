@@ -1,4 +1,4 @@
-node("docker") {
+node("aws") {
     docker.withRegistry('contardo.acuna@gmail.com', 'docker-hub-credentials') {
     
         git url: "https://github.com/ContardoRM/HelloWorldCI", credentialsId: 'git-hub-credentials'
