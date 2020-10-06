@@ -1,16 +1,11 @@
 node('master') {
-    stage('Clone repository') {
+    stage('Init') {
         /* Let's make sure we have the repository cloned to our workspace */
-        checkout scm
-    }
-    stage('Build Docker image') {
-        /*builds the image; synonymous to Docker build on the command line */
-        app = docker.build("nimrods8/helloisrael")
+        sh 'pwd'
+        sh 'ls -ltrh'
     }
     stage('Test Docker image') {
-        app.inside {
             sh 'echo "Tests passed"'
-        }
     }
     stage('Push Docker image') {
         /* Finally, we'll push the image with two tags:
