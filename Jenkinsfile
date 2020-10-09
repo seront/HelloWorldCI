@@ -5,10 +5,12 @@ node {
         sh 'ls -ltrh'
     }
     stage('Test Docker image') {
-            sh 'echo "Tests passed"'
+        sh 'echo "Tests passed"'
     }
     stage('Sonar') {
-                sh 'mvn sonar:sonar -Dsonar.projectKey=NCR -Dsonar.host.url=http://3.94.115.40:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
+        sh 'pwd'
+        sh 'ls -ltrh'
+        sh 'mvn sonar:sonar -Dsonar.projectKey=NCR -Dsonar.host.url=http://3.94.115.40:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
 
     }
     stage('Push Docker image') {
