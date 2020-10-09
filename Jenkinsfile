@@ -8,19 +8,8 @@ node {
             sh 'echo "Tests passed"'
     }
     stage('Sonar') {
-          environment {
-            SCANNER_HOME = tool 'sonar-scanner'
-            ORGANIZATION = "NCR"
-            PROJECT_NAME = "NCR"
-          }
-          steps {
-            withSonarQubeEnv('Sonar') {
-                sh 'mvn sonar:sonar \
-                  -Dsonar.projectKey=NCR \
-                  -Dsonar.host.url=http://3.94.115.40:9000 \
-                  -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
-                }
-              }
+                sh 'mvn sonar:sonar -Dsonar.projectKey=NCR -Dsonar.host.url=http://3.94.115.40:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
+
     }
     stage('Push Docker image') {
     }
