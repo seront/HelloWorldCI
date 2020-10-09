@@ -1,6 +1,6 @@
 node {
     stage('Init') {
-        sh 'ls -ltrh'
+        sh 'ls -ltrh web/'
     }
     stage('Test') {
         sh 'echo "Tests passed"'
