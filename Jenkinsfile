@@ -6,6 +6,7 @@ node {
         sh 'echo "Tests passed"'
     }
     stage('Analisis de Codigo con Sonar') {
+        sh 'echo $MAVEN_HOME'
         sh '$MAVEN_HOME/mvn sonar:sonar -f web/pom.xml -Dsonar.source=./web -Dsonar.projectKey=NCR -Dsonar.host.url=http://34.229.94.90:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
 
     }
