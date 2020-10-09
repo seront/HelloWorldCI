@@ -10,7 +10,7 @@ node {
     stage('Sonar') {
         sh 'pwd'
         sh 'ls -ltrh'
-        sh 'mvn sonar:sonar -Dsonar.projectKey=NCR -Dsonar.host.url=http://3.94.115.40:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
+        sh './var/jenkins_home/opt/apache-maven-3.5.4/bin/mvn sonar:sonar -Dsonar.projectKey=NCR -Dsonar.host.url=http://34.229.94.90/:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
 
     }
     stage('Push Docker image') {
