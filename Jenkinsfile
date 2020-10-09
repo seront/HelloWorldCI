@@ -9,7 +9,7 @@ node {
     }
     stage('Sonar') {
         sh 'echo $MAVEN_HOME'
-        sh '$MAVEN_HOME/bin/mvn -version'
+        sh '$MAVEN_HOME/mvn -version'
         sh 'mvn sonar:sonar -Dsonar.projectKey=NCR -Dsonar.host.url=http://34.229.94.90/:9000 -Dsonar.login=78ca59741fb9268ecbe634c49ecf2c338000b043'
 
     }
