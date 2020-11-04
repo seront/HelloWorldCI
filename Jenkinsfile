@@ -1,6 +1,7 @@
 node {
     stage('Clonacion Repositorio') {
-        sh 'ls -ltrh web/'
+        sh 'ls -ltrh'
+        sh 'pwd'
     }
     stage('Test Unitarios') {
         sh 'echo "Tests passed Hola mundo"'
