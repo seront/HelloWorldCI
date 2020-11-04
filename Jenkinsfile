@@ -3,7 +3,7 @@ node {
         sh 'ls -ltrh web/'
     }
     stage('Test Unitarios') {
-        sh 'echo "Tests passed"'
+        sh 'echo "Tests passed Hola mundo"'
     }
     stage('Analisis de Codigo con Sonar') {
         sh 'sh /var/jenkins_home/opt/apache-maven-3.5.4/bin/mvn -version'
