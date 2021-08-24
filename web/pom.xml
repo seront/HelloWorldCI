@@ -28,7 +28,16 @@
         <url>scm:git:https://github.com/ContardoRM/HelloWorldCI.git</url>
       <tag>HEAD</tag>
   </scm>
-	
+<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://50.19.204.81:8081//nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://50.19.204.81:8081//nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 	
 	<build>
 		<finalName>web</finalName>
